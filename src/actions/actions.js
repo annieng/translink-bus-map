@@ -8,14 +8,12 @@ export function receiveBusses(json) {
 
 export function fetchBusses() {
   return dispatch => {
-  return request
-  // .get
-  .get('http://api.translink.ca/rttiapi/v1/buses?apikey=d3oX05CBjgbrmmeUoAzm')
-  .query('d3oX05CBjgbrmmeUoAzm')
-  // .set
-  .set('Accept', 'application/json')
-  .then(res => res.body)
-  .then(json => dispatch(receiveBusses(json)))
-  .catch(err => console.log(err))
+    return request
+    .get('http://api.translink.ca/rttiapi/v1/buses?apikey=d3oX05CBjgbrmmeUoAzm')
+    .query('d3oX05CBjgbrmmeUoAzm')
+    .set('Accept', 'application/json')
+    .then(res => res.body)
+    .then(json => dispatch(receiveBusses(json)))
+    .catch(err => console.log(err))
   }
 }

@@ -31,6 +31,27 @@ class Map extends Component {
     setInterval(this.props.actions.fetchBusses, 1000);
   }
 
+  showPopup() {
+    const {popup} = this.state
+
+    return popup && (
+      <Popup
+        tipSize={5}
+        longitude={popup.Longitude}
+        latitude={popup.Latitude}
+        closeOnClick={true}
+        closeButton={true}
+        anchor='top'
+        captureDrag={true}
+        onClose={()=> this.setState({popup: null})}
+        >
+        <p>Route No: {popup.RouteNo}</p>
+        <p>Destination: {popup.Destination}</p>
+        <p>Direction: {popup.Direction}</p>
+        <p>Last updated: {popup.RecordedTime}</p>
+      </Popup>
+    )
+  }
     render() {
     return (
       <div>
@@ -42,9 +63,10 @@ class Map extends Component {
         {this.props.busses.map((bus) =>
           <Bus {...bus} key={bus.VehicleNo} 
           // need to set up pop up to see bus information
-          // onClick={() => this.setState({ popup: bus })} 
+          onClick={() => this.setState({ popup: bus })}
           />
         )}
+          {this.showPopup()}
         </ReactMapGL>
       </div>
     )
