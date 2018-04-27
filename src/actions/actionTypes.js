@@ -1,0 +1,2 @@
+export const FETCH_BUSSES = 'FETCH_BUSSES';
+export const RECEIVE_BUSSES = 'RECEIVE_BUSSES';
