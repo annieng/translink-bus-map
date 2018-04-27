@@ -6,7 +6,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Map />
+        <div className='header'>
+         <h1 className='title'> Translink Bus Mapper </h1>
+        </div>
+        <div className='map-container'>
+          <Map />
+        </div>
       </div>
     );
   }

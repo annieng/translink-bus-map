@@ -17,12 +17,11 @@ class Map extends Component {
     this.state = {
       viewport: {
         height: 800,
-        width: 1000,
+        width: 1200,
         latitude: 49.2827,
         longitude: -123.1207,
         zoom: 10,
       }
-      // add popup option here for bus info
     }
   }
   // componentWillMount method which will fetch busses at a set interval of every 1000ms
