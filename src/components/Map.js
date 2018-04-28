@@ -59,9 +59,8 @@ class Map extends Component {
           onViewportChange={(viewport) => this.setState({ viewport })}
           mapboxApiAccessToken={api}
           >
-        {this.props.busses.map((bus) =>
+          {this.props.busses.map((bus) =>
           <Bus {...bus} key={bus.VehicleNo} 
-          // need to set up pop up to see bus information
           onClick={() => this.setState({ popup: bus })}
           />
         )}
@@ -72,15 +71,16 @@ class Map extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    busses: state.busses
-  };
-}
 
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch)
+  };
+}
+
+function mapStateToProps(state) {
+  return {
+    busses: state.busses
   };
 }
 
