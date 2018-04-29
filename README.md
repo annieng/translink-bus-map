@@ -10,6 +10,8 @@ Clone or download this repository and run `yarn install` to install dependencies
 
 Once dependencies are installed run `yarn start` to start project on a local host server.
 
+If you are having trouble seeing the busses, you will need to install the [CORS toggle](https://chrome.google.com/webstore/detail/cors-toggle/jioikioepegflmdnbocfhgmpmopmjkim) from the Chrome Web Store and set it to allow cross-origin sharing.
+
 
 ### Thanks To
 
