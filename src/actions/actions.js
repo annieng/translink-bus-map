@@ -12,8 +12,12 @@ export function fetchBusses() {
     .get('http://api.translink.ca/rttiapi/v1/buses?apikey=d3oX05CBjgbrmmeUoAzm')
     .query('d3oX05CBjgbrmmeUoAzm')
     .set('Accept', 'application/json')
+    .set("Access-Control-Allow-Origin", "*")
+    .set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+    .set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
     .then(res => res.body)
     .then(json => dispatch(receiveBusses(json)))
     .catch(err => console.log(err))
   }
 }
+
